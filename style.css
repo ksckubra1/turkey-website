@@ -1,0 +1,259 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    height: 100vh;
+    width: 100vw;
+    overflow: hidden;
+    background-color: black;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+
+#video1 {
+    opacity: 1;
+    position: absolute;
+    z-index: 1;
+    transition: all .5s;
+    width: 100%;
+    max-width: 100vw;
+    min-height: 100vh;
+    object-fit: cover;
+}
+
+#video2 {
+    opacity: 0;
+    position: absolute;
+    z-index: 1;
+    transition: all .5s;
+    width: 100vw;
+}
+
+.controls {
+    position: absolute;
+    bottom: 10px;
+    left: 10px;
+    z-index: 3;
+}
+
+.filter {
+    position: absolute;
+    z-index: 2;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.7);
+    /* backdrop-filter: blur(3px); */
+}
+
+header {
+    position: absolute;
+    z-index: 4;
+    width: 100vw;
+    height: 140px;
+    color: #fff;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 80px;
+}
+
+.logo {
+    font-weight: bold;
+    font-size: 30px;
+}
+
+.right {
+    display: flex;
+    gap: 40px;
+    align-items: center;
+}
+
+nav {
+    display: flex;
+    gap: 30px;
+}
+
+nav a {
+    text-decoration: none;
+    color: white;
+
+}
+
+.icons {
+    font-size: 24px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.icons i {
+    cursor: pointer;
+}
+
+
+.search {
+    width: 200px;
+    background-color: rgba(255, 255, 255, 0.8);
+    padding: 10px 20px;
+    height: 30px;
+    opacity: 1;
+    border: 0px;
+    border-radius: 10px;
+    transition: all .5s;
+}
+
+.searchGizle {
+    width: 0px;
+    opacity: 0;
+}
+
+
+.container {
+    z-index: 4;
+    position: absolute;
+    width: calc(100vw - 160px);
+    bottom: 80px;
+    left: 80px;
+}
+
+.leftSide {
+    position: absolute;
+    bottom: 0px;
+    left: 0px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    align-items: flex-start;
+    transition: all .5s;
+    opacity: 1;
+}
+
+.leftSide .title {
+    font-size: 80px;
+    font-weight: bold;
+    color: white;
+}
+
+.leftSide .subtitle {
+    color: white;
+    font-size: 16px;
+    font-weight: 200;
+}
+
+.otherCity {
+    font-size: 40px;
+    font-weight: bold;
+    color: white;
+    opacity: .3;
+    cursor: pointer;
+}
+
+.exploreBtn {
+    background-color: rgb(43, 79, 43);
+    color: white;
+    padding: 10px 20px;
+    border-radius: 3px;
+    font-size: 24px;
+    border: none;
+    display: flex;
+    gap: 30px;
+    align-items: center;
+}
+
+.exploreBtn2 {
+    background-color: rgb(79, 60, 36);
+    color: white;
+    padding: 10px 20px;
+    border-radius: 3px;
+    font-size: 24px;
+    border: none;
+    display: flex;
+    gap: 30px;
+    align-items: center;
+}
+
+.hide {
+    opacity: 0;
+}
+
+.rightSide {
+    display: flex;
+    align-items: flex-end;
+    gap: 30px;
+    position: absolute;
+    right: 0px;
+    bottom: 0px;
+}
+
+
+/* asdlkaslkdnalskdnaslkdnasd */
+
+.cityCard {
+    width: 200px;
+    height: 300px;
+    position: relative;
+    perspective: 1000px;
+}
+
+.cityCard:first-of-type {
+    width: 250px;
+    height: 350px;
+}
+
+.cardFace {
+    display: flex;
+    position: relative;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    color: white;
+    width: 100%;
+    height: 100%;
+    border-radius: 10px;
+    backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
+    transition: transform .5s linear;
+    transform-style: preserve-3d;
+    overflow: hidden;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    box-shadow: 0px 0px 30px black;
+}
+
+.cardFace img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+}
+
+.cardFace .location {
+    background: linear-gradient(0deg, rgba(0, 0, 0, 1) 0%, rgba(0, 0, 0, 0) 100%);
+    position: absolute;
+    bottom: 0px;
+    left: 0px;
+    right: 0px;
+    padding: 10px;
+    padding-top: 30px;
+
+}
+
+.backFace {
+    transform: rotateY(180deg);
+}
+
+.frontFace {
+    transform: rotateY(0deg);
+}
+
+.flipped .backFace {
+    transform: rotateY(360deg);
+}
+
+.flipped .frontFace {
+    transform: rotateY(180deg);
+}
